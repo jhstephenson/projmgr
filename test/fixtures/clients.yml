@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client_name: MyString
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  contact_name: MyString
+  contact_email: MyString
+  contact_phone: MyString
+  internal_account_number: 1
+  default_billing_rate: 9.99
+
+two:
+  client_name: MyString
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  contact_name: MyString
+  contact_email: MyString
+  contact_phone: MyString
+  internal_account_number: 1
+  default_billing_rate: 9.99
