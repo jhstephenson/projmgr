@@ -1,4 +1,5 @@
 ActiveAdmin.register Activity do
+  permit_params :activity_description, :date, :hours, :note, :billable, :posted, :posted_date
 
 
   # See permitted parameters documentation:
