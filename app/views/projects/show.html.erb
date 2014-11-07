@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project name:</strong>
+  <%= @project.project_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @project.client_id %>
+</p>
+
+<p>
+  <strong>Started:</strong>
+  <%= @project.started %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @project.completed %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @project.type_id %>
+</p>
+
+<p>
+  <strong>Estimated time:</strong>
+  <%= @project.estimated_time %>
+</p>
+
+<p>
+  <strong>Actual time:</strong>
+  <%= @project.actual_time %>
+</p>
+
+<p>
+  <strong>Billing rate:</strong>
+  <%= @project.billing_rate %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @project.client %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
