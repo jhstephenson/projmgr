@@ -1,4 +1,5 @@
 ActiveAdmin.register Projecttype do
+  permit_params :project_type
 
 
   # See permitted parameters documentation:
