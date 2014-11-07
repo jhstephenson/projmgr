@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107231531) do
+ActiveRecord::Schema.define(version: 20141107231552) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -27,6 +27,25 @@ ActiveRecord::Schema.define(version: 20141107231531) do
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+
+  create_table "activities", force: true do |t|
+    t.string   "activity_description"
+    t.datetime "date"
+    t.decimal  "hours"
+    t.text     "note"
+    t.integer  "user_id"
+    t.integer  "client_id"
+    t.integer  "project_id"
+    t.boolean  "billable"
+    t.boolean  "posted"
+    t.datetime "posted_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "activities", ["client_id"], name: "index_activities_on_client_id"
+  add_index "activities", ["project_id"], name: "index_activities_on_project_id"
+  add_index "activities", ["user_id"], name: "index_activities_on_user_id"
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -45,6 +64,47 @@ ActiveRecord::Schema.define(version: 20141107231531) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+
+  create_table "clients", force: true do |t|
+    t.string   "client_name"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip_code"
+    t.string   "contact_name"
+    t.string   "contact_email"
+    t.string   "contact_phone"
+    t.integer  "internal_account_number"
+    t.decimal  "default_billing_rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "project_name"
+    t.text     "description"
+    t.integer  "client_id"
+    t.datetime "started"
+    t.datetime "completed"
+    t.integer  "type_id"
+    t.decimal  "estimated_time"
+    t.decimal  "actual_time"
+    t.decimal  "billing_rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["client_id"], name: "index_projects_on_client_id"
+
+  create_table "projecttypes", force: true do |t|
+    t.string   "project_type"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projecttypes", ["project_id"], name: "index_projecttypes_on_project_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

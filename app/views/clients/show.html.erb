@@ -7,16 +7,10 @@
   <dl>
       <dt class="label label-default"><%= model_class.human_attribute_name(:client_name) %></dt>
       <dd><pre class="prettyprint"><%= @client.client_name %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:address_1) %></dt>
-      <dd><pre class="prettyprint"><%= @client.address_1 %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:address_2) %></dt>
-      <dd><pre class="prettyprint"><%= @client.address_2 %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:city) %></dt>
-      <dd><pre class="prettyprint"><%= @client.city %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:state) %></dt>
-      <dd><pre class="prettyprint"><%= @client.state %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:zip_code) %></dt>
-      <dd><pre class="prettyprint"><%= @client.zip_code %></pre></dd>
+      <dt class="label label-default">Address</dt>
+      <dd>
+        <pre class="prettyprint"><%= @client.address_1 %> </br><%= @client.address_2 %></br><%= @client.city %>, <%= @client.state %> <%= @client.zip_code %></pre>
+      </dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:contact_name) %></dt>
       <dd><pre class="prettyprint"><%= @client.contact_name %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:contact_email) %></dt>
