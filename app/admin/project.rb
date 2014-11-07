@@ -1,4 +1,5 @@
 ActiveAdmin.register Project do
+  permit_params :project_name, :description, :client_id, :started, :completed, :type_id, :estimated_time, :actual_time, :billing_rate
 
 
   # See permitted parameters documentation:
